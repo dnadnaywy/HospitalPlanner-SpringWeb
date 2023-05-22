@@ -1,0 +1,198 @@
+/**stilurile sunt aplicate implicit și se folosesc pentru a asigura un aspect consistent pentru site */
+html,body,div,span,h1,h2,h3,h4,h5,h6,p,blockquote,a,img,center,ol,
+ul,li,article,footer,header,menu,nav,section {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	font-weight: normal;
+	vertical-align: baseline;
+}
+
+body {
+	line-height: 1;
+}
+
+ol,
+ul {
+	list-style: none;
+    display: inline-block;
+    text-align: left;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+/** seteaza culoarea de fundal a paginii la o nuanta de gri deschis (#f3f6fa) */
+body {
+	background: #f3f6fa;
+    color: #036bfc;
+	font-family: 'Lato', sans-serif;
+	font-size: 15pt;
+	font-weight: 300;
+	letter-spacing: 0.025em;
+	line-height: 1.75em;
+}
+
+/**  "h1" (titlu nivel 1), "h2" (titlu nivel 2), "h3" (titlu nivel 3)*/
+h1,h2,h3,h4,h5,h6 {
+	color: inherit;
+	/* inherit - adica va folosi culoarea mostenita de la elementul parinte*/
+	font-weight: 300;
+	line-height: 1.75em;
+	margin-bottom: 1em;
+	text-transform: uppercase;
+}
+
+/** elementele "a" (link-uri) din interiorul elementelor de tip "h1", "h2", "h3", "h4", "h5" si "h6*/
+h1 a,h2 a,h3 a,h4 a,
+h5 a,
+h6 a {
+	color: inherit;
+	text-decoration: none;
+	border: 0;
+}
+h1 {
+	font-size: 1.5em;
+	letter-spacing: 0.1em;
+}
+h3 {
+	font-size: 1.15em;
+	letter-spacing: 0.025em;
+}
+
+
+
+
+/* Row */
+
+.row {
+	display: flex;
+	/**  elementele copil sa se aseze pe o singura linie */
+	flex-wrap: wrap;
+	/** ele sunt aranjate pe mai multe linii daca depasesc latimea disponibila*/
+	box-sizing: border-box;
+	align-items: stretch;
+}
+
+/** instructiuni pt alinierea unor elemente de tip row*/
+.row.aln-top {
+	align-items: flex-start;
+}
+
+.row.aln-middle {
+	align-items: center;
+}
+
+.row.aln-bottom {
+	align-items: flex-end;
+}
+
+.wrapper .row {
+	justify-content: center;
+}
+
+
+.fullscreen-image {
+    height: 100vh; /* Set the height to cover the entire viewport */
+    background-image: url("hospitalIcon.png");
+    background-size:auto; /* Scale the image to cover the entire container */
+    background-repeat: no-repeat;
+    background-position:center; /* Position the image at the center top */
+  }
+  
+
+
+/* List */
+
+
+
+
+
+/* Header */
+
+#header {
+	background: #aab4c2;
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.075);
+	color: inherit;
+	cursor: default;
+	font-size: 0.8em;
+	left: 0;
+	padding: 2em 1.5em;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 10000;
+}
+
+
+
+#header nav {
+	letter-spacing: 0.075em;
+	position: absolute;
+	right: 17em;
+	text-transform: uppercase;
+	top: 0.75em;
+}
+
+#header nav ul {
+	
+    text-align: center;
+}
+
+#header nav ul li {
+	display: inline-block;
+	margin-left: 1.5em;
+	padding-left: 0;
+}
+
+#header nav ul li a {
+	border: solid 1px transparent;
+	color: inherit;
+	display: inline-block;
+	line-height: 1em;
+	padding: 0.6em 0.75em;
+	text-decoration: none;
+}
+
+
+
+#header nav ul li.current>a {
+	font-weight: 900;
+	/* pagina curenta apare ingrosata in meniu cand suntem in ea */
+}
+
+#header.formenu {
+	/* pt elementele de sus din meniu*/
+	background: transparent;
+	box-shadow: none;
+	color: #036bfc;
+	padding: 2em 2.5em;
+	position: absolute;
+	text-align: center;
+}
+
+
+
+#text {
+	font-size: 1.5em;
+	letter-spacing: 0.1em;
+	border-bottom: solid 2px;
+	border-top: solid 2px;
+	font-size: 2.5em;
+	font-weight: 900;
+	text-align: center;
+	margin-left: 25%;
+	margin-top: 8%;
+	position: absolute;
+	color: white;
+	text-transform: uppercase;
+}
