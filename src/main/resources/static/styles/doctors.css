@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;800&display=swap');
+
+body {
+    font-family: 'Urbanist', sans-serif;
+    background-image: url("../images/doctor-blue.jpg"), url("../images/doctor-woman.jpg");
+    background-position: left 100px, right 100px;
+    background-size: 50% auto, 50% auto;
+    background-repeat: no-repeat;
+}
+
+.main-header {
+    background-color: #1CABE8;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 100%;
+}
+
+.main-header {
+    padding-top: 45px;
+    color: #fff;
+    margin-right: 20px;
+    font-size: 35px;
+    font-weight: 600;
+    -webkit-text-stroke-width: 0.8px;
+    -webkit-text-stroke-color: #095c7b;
+}
+
+.text-main-header {
+    margin-left: 20px;
+}
+
+.divide-content {
+    background-color: #095c7b;
+    position: absolute;
+    top: 120px;
+    left: 0;
+    height: 5px;
+    width: 100%;
+}
+
+.header-doctors {
+    position: absolute;
+    height: 95%;
+    width: 99%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+}
+
+.buttons-header-doctors {
+    background-color: #1CABE8;
+    opacity: 0.9;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    transition: all 0.5s ease-in-out;
+
+    border: 2px solid #095c7b;
+    border-radius: 24px;
+    padding: 15px;
+    padding-left: 100px;
+    padding-right: 100px;
+
+    -webkit-text-stroke-width: 0.8px;
+    -webkit-text-stroke-color: black;
+}
+
+.buttons-header-doctors:hover {
+    cursor: pointer;
+    background-color: #e7e7e7;
+    opacity: 1;
+    color: #1CABE8;
+    transition: all 0.5s ease-in-out;
+    -webkit-text-stroke-width: 0.8px;
+    -webkit-text-stroke-color: black;
+}

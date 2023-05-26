@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;800&display=swap');
+
+body {
+    font-family: 'Urbanist', sans-serif;
+    background-image: url("../images/blurred-background.jpg");
+    background-size: 100%;
+}
+
+.main-rectangle {
+    background-color: #1CABE8;
+    border: 1px solid;
+    opacity: 0.85;
+    height: 50%;
+    width: 75%;
+    border-radius: 39px;
+}
+
+.rectangle-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: 70%;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+}
+
+.choose-role {
+    margin-top: 10px;
+    font-size: 50px;
+    color: #fff;
+    font-weight: 800;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    text-align: center;
+}
+
+.role {
+    background-color: #1CABE8;
+    opacity: 0.85;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600;
+    transition: all 0.5s ease-in-out;
+
+    border: 2px solid #095c7b;
+    border-radius: 29px;
+    padding: 25px;
+    padding-left: 100px;
+    padding-right: 100px;
+
+    -webkit-text-stroke-width: 0.8px;
+    -webkit-text-stroke-color: black;
+}
+
+.role:hover {
+    cursor: pointer;
+    background-color: #e7e7e7;
+    opacity: 1;
+    color: #1CABE8;
+    transition: all 0.5s ease-in-out;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: black;
+}
