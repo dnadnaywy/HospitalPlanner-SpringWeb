@@ -1,0 +1,45 @@
+CREATE OR REPLACE DIRECTORY MY_DIR AS 'C:\Users\panai\IdeaProjects\HospitalPlaneer\src\main\resources\sendToCSV'; -- creeaza fisierul CSV
+
+DECLARE
+    v_fisier    utl_file.file_type;
+    v_linie     VARCHAR2(4000);
+    CURSOR c_note IS
+    SELECT
+        id,
+        name,
+        age,
+        SPECIALIZATION,
+        medical_grade,
+        phone_number,
+        email
+    FROM
+        doctors;
+
+BEGIN
+    v_fisier := utl_file.fopen('MY_DIR', 'doctori.csv', 'W');
+    FOR r_note IN c_note LOOP
+        v_linie := r_note.id || ','|| r_note.name|| ','|| r_note.age
+                   || ','
+                   || r_note.SPECIALIZATION
+                   || ','
+                   || r_note.medical_grade
+                   || ','
+                   || r_note.phone_number
+                   || ','
+                   || r_note.email;
+
+        utl_file.put_line(v_fisier, v_linie);
+    END LOOP;
+
+    utl_file.fclose(v_fisier);
+    DELETE FROM note;
+
+    COMMIT;
+EXCEPTION
+    WHEN OTHERS THEN
+        IF utl_file.is_open(v_fisier) THEN
+            utl_file.fclose(v_fisier);
+        END IF;
+        RAISE;
+END;
+/
