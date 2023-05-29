@@ -8,9 +8,9 @@ body {
 }
 
 .main-rectangle {
-    background-color: #1CABE8;
+    background-color: #546de5;
     border: 1px solid;
-    opacity: 0.85;
+    opacity: 0.95;
     height: 50%;
     width: 75%;
     border-radius: 39px;
@@ -43,8 +43,8 @@ body {
 }
 
 .role {
-    background-color: #1CABE8;
-    opacity: 0.85;
+    background-color: #778beb;
+    opacity: 1;
     color: #fff;
     font-size: 30px;
     font-weight: 600;

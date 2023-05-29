@@ -4,7 +4,7 @@
 body {
     font-family: 'Urbanist', sans-serif;
     background-image: url("../images/doctor-blue.jpg"), url("../images/doctor-woman.jpg");
-    background-position: left 100px, right 100px;
+    background-position: left 50px, right 50px;
     background-size: 50% auto, 50% auto;
     background-repeat: no-repeat;
 }
@@ -14,28 +14,25 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    height: 80px;
+    height: 60px;
     width: 100%;
-}
-
-.main-header {
-    padding-top: 45px;
-    color: #fff;
+    padding-top: 35px;
     margin-right: 20px;
-    font-size: 35px;
-    font-weight: 600;
-    -webkit-text-stroke-width: 0.8px;
-    -webkit-text-stroke-color: #095c7b;
 }
 
 .text-main-header {
-    margin-left: 20px;
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+    text-decoration: none;
+    -webkit-text-stroke-width: 0.8px;
+    -webkit-text-stroke-color: #095c7b;
 }
 
 .divide-content {
     background-color: #095c7b;
     position: absolute;
-    top: 120px;
+    top: 95px;
     left: 0;
     height: 5px;
     width: 100%;
@@ -51,7 +48,7 @@ body {
 }
 
 .buttons-header-doctors {
-    background-color: #1CABE8;
+    background-color: #095ACF;
     opacity: 0.9;
     color: #fff;
     font-size: 20px;
@@ -72,8 +69,13 @@ body {
     cursor: pointer;
     background-color: #e7e7e7;
     opacity: 1;
-    color: #1CABE8;
+    color: #095ACF;
     transition: all 0.5s ease-in-out;
     -webkit-text-stroke-width: 0.8px;
     -webkit-text-stroke-color: black;
+}
+
+.link-to-landing-page {
+    position: absolute;
+    top: 0px;
 }
