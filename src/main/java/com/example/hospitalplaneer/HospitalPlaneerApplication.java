@@ -21,8 +21,12 @@ public class HospitalPlaneerApplication {
             System.out.println("Doctors with ORL specialization:");
             System.out.println(doctors.returnDocsSpec("ORL"));
 
+            System.out.println("Doctors with a random specialization:");
+            System.out.println(doctors.returnDocsSpec("random"));
+
             var patients = new PatientsDAO();
             patients.deleteMichaelJackson();
+            Database.getConnection().commit();
 
             System.out.println("\nAdmin asked for the tables:");
             System.out.println(admin.returnTablesData());
