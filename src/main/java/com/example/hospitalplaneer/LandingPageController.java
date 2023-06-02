@@ -19,4 +19,10 @@ public class LandingPageController {
     public String patientsPage() {
         return "patientsPage";
     }
+
+    @GetMapping(value = "/adminPage")
+    public String adminPage() {
+        return "adminPage";
+    }
+
 }

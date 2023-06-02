@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;800&display=swap');
+
+body {
+    font-family: 'Urbanist', sans-serif;
+    background-image: url("../images/doctor-blue.jpg"), url("../images/doctor-woman.jpg");
+    background-position: left 50px, right 50px;
+    background-size: 50% auto, 50% auto;
+    background-repeat: no-repeat;
+}
+
+.main-header {
+    background-color: #1CABE8;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 100%;
+    padding-top: 35px;
+    margin-right: 20px;
+}
+
+.text-main-header {
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+    text-decoration: none;
+    -webkit-text-stroke-width: 0.8px;
+    -webkit-text-stroke-color: #095c7b;
+}
+
+.divide-content {
+    background-color: #095c7b;
+    position: absolute;
+    top: 95px;
+    left: 0;
+    height: 5px;
+    width: 100%;
+}
+
+.header-doctors-1 {
+    position: absolute;
+    top: 70px;
+    height: 45%;
+    width: 99%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    align-content: space-evenly;
+    justify-content: space-around;
+
+    gap: 40px 40px;
+}
+
+.header-doctors-2 {
+    position: absolute;
+    top: 45%;
+    height: 45%;
+    width: 99%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    align-content: space-evenly;
+    justify-content: space-around;
+
+    gap: 40px 40px;
+}
+
+
+.buttons-header-doctors {
+    background-color: #095ACF;
+    opacity: 0.9;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    transition: all 0.5s ease-in-out;
+
+    border: 2px solid #095c7b;
+    border-radius: 24px;
+    padding: 15px;
+    padding-left: 100px;
+    padding-right: 100px;
+
+    -webkit-text-stroke-width: 0.8px;
+    -webkit-text-stroke-color: black;
+}
+
+.buttons-header-doctors:hover {
+    cursor: pointer;
+    background-color: #e7e7e7;
+    opacity: 1;
+    color: #095ACF;
+    transition: all 0.5s ease-in-out;
+    -webkit-text-stroke-width: 0.8px;
+    -webkit-text-stroke-color: black;
+}
+
+.flex-grow-property-value-2 {
+    flex-grow: 2;
+}
+
+.flex-shrink-property-value-2{
+    flex-shrink: 5;
+}
+
+.link-to-landing-page {
+    position: absolute;
+    top: 0px;
+}
