@@ -30,7 +30,7 @@ public class HospitalPlaneerApplication {
 
             System.out.println("\nAdmin asked for the tables:");
             System.out.println(admin.returnTablesData());
-//            SpringApplication.run(HospitalPlaneerApplication.class, args);
+            SpringApplication.run(HospitalPlaneerApplication.class, args);
             Database.closeConnection();
         } catch (SQLException e) {
             System.err.println(e);

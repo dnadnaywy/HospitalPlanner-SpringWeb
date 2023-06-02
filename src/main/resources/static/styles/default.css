@@ -1,3 +1,7 @@
 :root {
     --main-blue: #095ACF;
 }
+
+.no-display {
+    display: none;
+}

@@ -5,11 +5,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin page</title>
-  <link rel="website icon" href="../static/images/hospitalIcon.png"/>
+  <link rel="website icon" th:href="@{/images/hospitalIcon.png}"/>
   <!-- Asta e logoul din partea de sus sus de tot, ala cu pastila -->
+
+  <script src="https://kit.fontawesome.com/0668abd750.js" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="../static/styles/adminPage.css">
   <link th:href="@{/styles/adminPage.css}" rel="stylesheet" />
+  <link th:href="@{/styles/default.css}" rel="stylesheet" />
   <script type="text/javascript" th:src="@{/scripts/adminPage.js}"></script>
 </head>
 
@@ -18,16 +21,25 @@
 <div class="divide-content"></div>
 
 <div class="header-doctors-1">
-  <button class="buttons-header-doctors flex-grow-property-value-2">Add user</button>
+  <button type="button" th:onclick="showAlert()" class="buttons-header-doctors flex-grow-property-value-2">Add user</button>
   <button class="buttons-header-doctors flex-grow-property-value-2">Delete user</button>
 </div>
 
 <div class="header-doctors-2">
   <button class="buttons-header-doctors flex-grow-property-value-2">View the data from a specific<br>table from the DB</button>
-  <button type="button" th:onclick="logJSONData()" class="buttons-header-doctors flex-grow-property-value-2">Check metadata about tables<br>from the DB</button>
+  <button type="button" th:onclick="logJSONData()" class="buttons-header-doctors flex-grow-property-value-2" id="demo">Check metadata about tables<br>from the DB</button>
 </div>
+
 <div class="link-to-landing-page main-header text-main-header">
   <a href="http://localhost:7010/landingPage" class="text-main-header"><b>HospitalPlanner</b></a> - the perfect app both for <b>doctors</b> and <b>patients</b>.
+</div>
+
+<div class="container-metadata-tables">
+</div>
+<div class="button-return-main"></div>
+
+<div class="add-user">
+
 </div>
 
 </body>
