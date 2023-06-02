@@ -1,0 +1,36 @@
+<html>
+
+  <head>
+
+  </head>
+
+  <body>
+    <h1>Sign-Up</h1>
+    <form>
+      <label for="firstNAme">First name:</label><br>
+      <input type="text" name="firstName" placeholder="George" required><br>
+      <label for="lastName">Last name:</label><br>
+      <input type="text" name="lastName" placeholder="Ionescu" required><br>
+      <label for="email">Email address:</label><br>
+      <input type="email" name="email" placeholder="ionescu.george@gmail.com"><br>
+      <label for="phone">Enter a phone number:</label><br>
+      <input type="tel" id="phone" name="phone" placeholder="0755 555 555" pattern="[0-9]{4} [0-9]{3} [0-9]{3}" required><br>
+      <label for="password">Set a password (min 8 characters, at least 1 letter and at least 1 number):</label><br>
+      <input type="password" name="password" pattern="^(?=.*[0-9])(?=.*[a-zA-Z]).{8,}$" required><br>
+      <label for="ilness">Choose the category of you illness:</label>
+      <select name="ilnesses">
+        <option value="Urology">Kidneys</option>
+        <option value="Neurology">Brain</option>
+        <option value="Cardiology">Heart</option> 
+        <option value="ORL">Eyes</option>
+	<option value="ORL">Nose</option>
+	<option value="ORL">Throat</option>
+	<option value="Gastroenterology">Digestive health</option>
+	<option value="Pneumology">Respitatory health</option>
+      </select><br>
+      <input type="submit" value="Submit" required>
+
+    </form>
+  </body>
+
+</html>
