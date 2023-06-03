@@ -7,14 +7,11 @@ import databaseStuff.Database;
 
 import java.io.File;
 import java.io.IOException;
-import java.sql.CallableStatement;
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.Types;
+import java.sql.*;
 import java.util.List;
 
 public class AdminDAO {
-    public String returnTablesData()  throws SQLException {
+    public String returnTablesData() throws SQLException {
         Connection conn = Database.getConnection();
         CallableStatement cstmt = conn.prepareCall("{? = CALL return_table_data()}");
         cstmt.registerOutParameter(1, Types.VARCHAR);
@@ -23,6 +20,36 @@ public class AdminDAO {
         convertStringToJSON(tables);
         //convertJSONToList();
         return tables;
+    }
+
+    public static void findTableByName(String tableName) throws SQLException {
+        Connection con = Database.getConnection();
+        try (Statement stmt = con.createStatement();
+             ResultSet resultSet = stmt.executeQuery(
+                     "select * from " + tableName)) {
+
+            ResultSetMetaData metaData = resultSet.getMetaData();
+
+            // Get the number of columns in the result set
+            int columnCount = metaData.getColumnCount();
+            System.out.println("Number of columns: " + columnCount);
+
+            for (int i = 1; i <= columnCount; i++) {
+                String columnName = metaData.getColumnName(i);
+                String columnType = metaData.getColumnTypeName(i);
+
+                System.out.println("Column Name: " + columnName);
+                System.out.println("Column Type: " + columnType);
+                System.out.println();
+            }
+
+            while (resultSet.next()){
+                System.out.println(resultSet.getString(2));
+            }
+            resultSet.close();
+            stmt.close();
+            con.close();
+        }
     }
 
     public void convertStringToJSON(String jsonString) {
@@ -48,7 +75,8 @@ public class AdminDAO {
 
         try {
             // Read JSON file into a list of Person objects
-            List<Table> tableList = objectMapper.readValue(new File("src/main/resources/jsonFiles/tablesData.json"), new TypeReference<List<Table>>() {});
+            List<Table> tableList = objectMapper.readValue(new File("src/main/resources/jsonFiles/tablesData.json"), new TypeReference<List<Table>>() {
+            });
 
             // Print the list of Person objects
             for (Table table : tableList) {
