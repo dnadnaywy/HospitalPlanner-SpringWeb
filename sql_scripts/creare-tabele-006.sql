@@ -22,7 +22,6 @@ CREATE TABLE doctors (
     specialization VARCHAR2(255),
     phone_number VARCHAR2(20) UNIQUE,
     email VARCHAR2(100) UNIQUE,
-    phone VARCHAR(20) UNIQUE,
     password VARCHAR(100)
 );
 /
