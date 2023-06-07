@@ -2,13 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Update done</title>
+    <link rel="website icon" th:href="@{/images/hospitalIcon.png}"/>
+    <link rel="stylesheet" href="../static/styles/results.css">
+    <link th:href="@{/styles/results.css}" rel="stylesheet"/>
 </head>
 <body>
-Congratulations! You are old enough to sign up for this site.
-<p th:text="'id: ' + ${personForm.idDoctor}" />
-<p th:text="'content: ' + ${personForm.day}" />
-<p th:text="'content: ' + ${personForm.day}" />
-<a href="/schedule">Submit another message</a>
+<div class="divide-content"></div>
+<div class="link-to-landing-page main-header text-main-header">
+    <a href="http://localhost:7010/landingPage" class="text-main-header"><b>HospitalPlanner</b></a> - the perfect app
+    both for <b>doctors</b> and <b>patients</b>.
+</div>
+<div class="container">
+    Congratulations! You just updated schedules. Thank you!
+    <p class="fields" th:text="'id: ' + ${personForm.idDoctor}" />
+    <p th:text="'day: ' + ${personForm.day}" class="fields"/>
+    <p th:text="'hour: ' + ${personForm.hour}" class="fields"/>
+    <a href="/doctors/schedule" class="fields-link">Submit another message</a></div>
 </body>
 </html>

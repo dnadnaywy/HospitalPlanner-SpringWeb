@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
     <link rel="website icon" href="../static/images/hospitalIcon.png" />
+    <link rel="website icon" th:href="@{/images/hospitalIcon.png}"/>
     <!-- Asta e logoul din partea de sus sus de tot, ala cu pastila -->
 
     <link rel="stylesheet" href="../static/styles/landingPage.css">
@@ -17,12 +18,12 @@
         Choose your role:
     </div>
     <div class="rectangle-flex">
-        <a href="http://localhost:7010/patientsPage">
+        <a href="http://localhost:7010/patientsSignupForm">
             <button class="role">
                 Patients
             </button>
         </a>
-        <a href="http://localhost:7010/doctors/doctorsPage">
+        <a href="http://localhost:7010/doctorsSignupForm">
             <button class="role">
                 Doctors
             </button>

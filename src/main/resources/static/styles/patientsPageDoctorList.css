@@ -1,0 +1,101 @@
+.header-doctors-1 {
+    position: absolute;
+    top: 150px;
+    height: 45%;
+    width: 99%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    align-content: space-evenly;
+    justify-content: space-around;
+
+    gap: 40px 40px;
+}
+
+.buttons-header-doctors {
+    background-color: #095ACF;
+    opacity: 0.9;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    transition: all 0.5s ease-in-out;
+
+    border: 2px solid #095c7b;
+    border-radius: 24px;
+    padding: 15px;
+    padding-left: 100px;
+    padding-right: 100px;
+
+    -webkit-text-stroke-width: 0.8px;
+    -webkit-text-stroke-color: black;
+
+    box-shadow: 1px -1px 10px 1px rgba(150, 150, 150, 0.75);
+    -webkit-box-shadow: 1px -1px 10px 1px rgba(150, 150, 150, 0.75);
+    -moz-box-shadow: 1px -1px 10px 1px rgba(150, 150, 150, 0.75);
+}
+
+.buttons-header-doctors:hover {
+    cursor: pointer;
+    background-color: #e7e7e7;
+    opacity: 1;
+    color: #095ACF;
+    transition: all 0.5s ease-in-out;
+}
+
+.flex-grow-property-value-2 {
+    flex-grow: 2;
+}
+
+.container-doctor-list {
+    position: absolute;
+    top: 150px;
+    width: 100%;
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns: auto auto auto;
+}
+
+.schedule-special-text {
+    display: block;
+    align-self: flex-start;
+    grid-column-start: 1;
+    grid-column-end: 4;
+
+    font-weight: 600;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+
+    background-color: rgba(90, 99, 234, 0.75);
+    border-radius: 30px;
+    padding: 15px;
+    margin-bottom: 10px;
+
+    -webkit-text-stroke-width: 0.8px;
+    -webkit-text-stroke-color: black;
+}
+
+.make-appointment {
+    border: none;
+    cursor: pointer;
+
+    background-color: #095ACF;
+    font-size: 16px;
+    color: white;
+    border-radius: 30px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    -webkit-text-stroke-width: 0.2px;
+    -webkit-text-stroke-color: black;
+
+    transition: all 0.5s ease-in-out;
+}
+
+.make-appointment:hover {
+    transition: all 0.5s ease-in-out;
+    background-color: rgb(10, 37, 75);
+}

@@ -9,8 +9,10 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.*;
 import java.util.List;
+import java.util.Objects;
 
 public class AdminDAO {
+
     public String returnTablesData() throws SQLException {
         Connection conn = Database.getConnection();
         CallableStatement cstmt = conn.prepareCall("{? = CALL return_table_data()}");
@@ -80,20 +82,16 @@ public class AdminDAO {
         }
     }
 
-    public void convertJSONToList() {
+    public static <T> List<T> convertJSONToList(String jsonFile) {
         ObjectMapper objectMapper = new ObjectMapper();
-
         try {
             // Read JSON file into a list of Person objects
-            List<Table> tableList = objectMapper.readValue(new File("src/main/resources/jsonFiles/tablesData.json"), new TypeReference<List<Table>>() {
+            List<T> objectList = objectMapper.readValue(new File("src/main/resources/jsonFiles/" + jsonFile), new TypeReference<List<T>>() {
             });
-
-            // Print the list of Person objects
-            for (Table table : tableList) {
-                System.out.println(table);
-            }
+            return objectList;
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return null;
     }
 }

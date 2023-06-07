@@ -25,11 +25,10 @@ public class signupPageDoctorsController {
         System.out.println(doctor.toString());
         //verif existenta in BD
         boolean doctorExists = checkDoctorExists(doctor);
-        System.out.println("[029] doctor exists: " + doctorExists);
         if (!doctorExists) {
             insertDoctor(doctor);
         }
-        return "welcome";
+        return "doctorsPage";
     }
 
     private boolean checkDoctorExists(DoctorUser doctor) {

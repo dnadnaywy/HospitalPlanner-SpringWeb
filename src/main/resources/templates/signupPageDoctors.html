@@ -4,36 +4,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin page</title>
+    <title>SignUp Doctors</title>
     <link rel="website icon" href="@{/images/hospitalIcon.png}"/>
     <!-- Asta e logoul din partea de sus sus de tot, ala cu spitalul -->
+    <script src="https://kit.fontawesome.com/0668abd750.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../static/styles/forms.css">
+    <link th:href="@{/styles/doctorsPage.css}" rel="stylesheet" />
+    <link th:href="@{/styles/forms.css}" rel="stylesheet" />
+    <script type="text/javascript" th:src="@{/scripts/doctorsPage.js}"></script>
 </head>
 
 <body>
-<h1>Sign-Up Doctors</h1>
-<form action="/signupDoctors" method="POST">
-    <label for="firstNAme">First name:</label><br>
-    <input type="text" name="firstName" placeholder="George" required><br>
-    <label for="lastName">Last name:</label><br>
-    <input type="text" name="lastName" placeholder="Ionescu" required><br>
-    <label for="email">Email address:</label><br>
-    <input type="email" name="email" placeholder="ionescu.george@gmail.com"><br>
-    <label for="phone">Enter a phone number:</label><br>
-    <input type="tel" id="phone" name="phone" placeholder="0755 555 555" pattern="[0-9]{4} [0-9]{3} [0-9]{3}" required><br>
-    <label for="password">Set a password (min 8 characters, at least 1 letter and at least 1 number):</label><br>
-    <input type="password" name="password" pattern="^(?=.*[0-9])(?=.*[a-zA-Z]).{8,}$" required><br>
-    <label for="specialization">Choose your specialization:</label>
-    <select name="specialiation">
-        <option value="Urology">Urology</option>
-        <option value="Neurology">Neurology</option>
-        <option value="Cardiology">Cardiology</option>
-        <option value="ORL">ORL</option>
-        <option value="Gastroenterology">Gastroenterology</option>
-        <option value="Pneumology">Pneumology</option>
-    </select><br>
-    <input type="submit" value="Submit" required>
 
-</form>
+<div class="divide-content"></div>
+<div class="link-to-landing-page main-header text-main-header">
+    <a href="http://localhost:7010/landingPage" class="text-main-header"><b>HospitalPlanner</b></a> - the perfect app both for <b>doctors</b> and <b>patients</b>.
+</div>
+
+<div style="margin-top: 100px;"  class="login-container">
+
+    <img th:src="@{/images/doctor-woman.jpg}" alt="woman-doctor">
+    <form class="login-form" action="/signupDoctors" method="POST" id="signupDoctor">
+        <label for="firstNAme">First name:</label><br>
+        <input type="text" name="firstName" placeholder="George" required><br>
+        <label for="lastName">Last name:</label><br>
+        <input type="text" name="lastName" placeholder="Ionescu" required><br>
+        <label for="email">Email address:</label><br>
+        <input type="email" name="email" placeholder="ionescu.george@gmail.com"><br>
+        <label for="phone">Enter a phone number:</label><br>
+        <input type="tel" id="phone" name="phone" placeholder="0755 555 555" pattern="[0-9]{4} [0-9]{3} [0-9]{3}" required><br>
+        <label for="password">Set a password (min 8 characters, at least 1 letter and at least 1 number):</label><br>
+        <input type="password" name="password" pattern="^(?=.*[0-9])(?=.*[a-zA-Z]).{8,}$" required><br>
+        <label for="specialization">Choose your specialization:</label>
+        <select name="specialiation">
+            <option value="Urology">Urology</option>
+            <option value="Neurology">Neurology</option>
+            <option value="Cardiology">Cardiology</option>
+            <option value="ORL">ORL</option>
+            <option value="Gastroenterology">Gastroenterology</option>
+            <option value="Pneumology">Pneumology</option>
+        </select><br>
+        <label for="medicalGrade">Choose your medical grade:</label>
+        <select name="medicalGrade">
+            <option value="Primary doctor">Primary doctor</option>
+            <option value="Specialist">Specialist</option>
+            <option value="Resident">Resident</option>
+        </select><br>
+        <input type="submit" value="Submit" required>
+        <p>Already signed up? <a href="http://localhost:7010/doctorsLoginForm" class="login-for-doctors-patients">Login here</a></p>
+
+    </form>
+</div>
 </body>
 
 </html>

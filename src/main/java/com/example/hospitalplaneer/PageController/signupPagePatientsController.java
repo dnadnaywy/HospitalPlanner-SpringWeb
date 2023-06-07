@@ -25,7 +25,7 @@ public class signupPagePatientsController {
         if (!patientExists) {
             insertPatient(patient);
         }
-        return "welcome";
+        return "patientsPage";
     }
 
     private boolean checkPatientExists(PatientUser patient) {

@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Schedule</title>
+    <title>Make Appointment</title>
     <link rel="website icon" th:href="@{/images/hospitalIcon.png}"/>
-    <!-- Asta e logoul din partea de sus sus de tot, ala cu pastila -->
     <link rel="stylesheet" href="../static/styles/forms.css">
     <link th:href="@{/styles/forms.css}" rel="stylesheet" />
 </head>
 <body>
+
 <div class="divide-content"></div>
 <div class="link-to-landing-page main-header text-main-header">
     <a href="http://localhost:7010/landingPage" class="text-main-header"><b>HospitalPlanner</b></a> - the perfect
@@ -20,14 +19,16 @@
 
 <div style="margin-top: 100px;" class="login-container">
     <img th:src="@{/images/doctor-woman.jpg}" alt="woman-doctor">
-    <form action="#" class="login-form" th:action="@{/doctors/schedule}" th:object="${personForm}" method="post">
-        <p>Your id:<br><input type="text" th:field="*{idDoctor}" pattern="^\d+$"/></p>
-        <p>Day of the week: <input type="text" th:field="*{day}" pattern="^\d+$"/></p><br>
-        <p>Hour: <input type="text" th:field="*{hour}" pattern="^\d+$"/></p><br>
-        <p>Minute: <input type="text" th:field="*{minute}" pattern="^\d+$"/></p><br>
+    <form action="#" class="login-form" th:action="@{/appointment}" th:object="${personForm}" method="post" id="appointment-form">
+        <p>Doctor's id:<br><input type="text" th:field="*{idDoctor}" pattern="^\d+$" required/></p>
+        <p>Your id:<br><input type="text" th:field="*{idPatient}" pattern="^\d+$" required/></p>
+        <p>Day of the week: <input type="text" th:field="*{day}" pattern="^\d+$" required/></p><br>
+        <p>Hour: <input type="text" th:field="*{hour}" pattern="^\d+$" required/></p><br>
+        <p>Minute: <input type="text" th:field="*{minute}" pattern="^\d+$" required/></p><br>
         <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
         <p th:text="${personForm.errorMessage}"/>
     </form>
 </div>
+
 </body>
 </html>

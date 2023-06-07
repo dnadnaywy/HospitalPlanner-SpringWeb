@@ -27,7 +27,7 @@ public class loginPagePatientsController {
         if (!patientExists) {
             return "error";
         } else {
-            return "welcome";
+            return "patientsPage";
         }
     }
 
@@ -37,10 +37,11 @@ public class loginPagePatientsController {
             Connection conn = Database.getConnection();
 
             //cu ce sa verificam daca exista?
-            String sql = "SELECT COUNT(*) FROM patients WHERE name = ?";
+            String sql = "SELECT COUNT(*) FROM patients WHERE name = ? AND password = ?";
             String name = patient.getLastName() + " " + patient.getFirstName();
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setString(1, name);
+            stmt.setString(2, patient.getPassword());
 
             // Execute the query
             ResultSet rs = stmt.executeQuery();
@@ -48,8 +49,6 @@ public class loginPagePatientsController {
             // Retrieve the result
             rs.next();
             int count = rs.getInt(1);
-
-            //TODO: verify the password
 
             // Close the resources
             rs.close();

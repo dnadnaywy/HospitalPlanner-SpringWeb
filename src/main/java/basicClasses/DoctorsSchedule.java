@@ -20,6 +20,8 @@ public class DoctorsSchedule {
 
     private Integer minute;
 
+    private Integer idPatient;
+
     private String errorMessage = "This is the end of the form";
 
     public DoctorsSchedule() {}
@@ -29,6 +31,14 @@ public class DoctorsSchedule {
         this.idDoctor = idDoctor;
         this.hour = hour;
         this.minute = minute;
+    }
+
+    public Integer getIdPatient() {
+        return idPatient;
+    }
+
+    public void setIdPatient(Integer idPatient) {
+        this.idPatient = idPatient;
     }
 
     public Integer getDay() {

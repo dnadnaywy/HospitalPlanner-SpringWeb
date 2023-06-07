@@ -11,8 +11,7 @@
     <script src="https://kit.fontawesome.com/0668abd750.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="../static/styles/doctorsPage.css">
-    <link th:href="@{/styles/doctorsPage.css}" rel="stylesheet" />
-    <script type="text/javascript" th:src="@{/scripts/doctorsPage.js}"></script>
+    <link th:href="@{/styles/doctorsPage.css}" rel="stylesheet"/>
 </head>
 
 <body>
@@ -20,13 +19,19 @@
 <div class="divide-content"></div>
 
 <div class="header-doctors">
-    <button type="button" th:onclick="redirectToDoctorViewSchedule()" class="buttons-header-doctors">View Schedule</button>
-    <button type="button" th:onclick="showAlert()" class="buttons-header-doctors">Update Schedule</button>
+    <button type="button" th:onclick="displayScheduleByName()" class="buttons-header-doctors">View Schedule</button>
+    <button type="button" th:onclick="redirectToDoctorViewSchedule()" class="buttons-header-doctors">Update Schedule</button>
 </div>
 
 <div class="link-to-landing-page main-header text-main-header">
-    <a href="http://localhost:7010/landingPage" class="text-main-header"><b>HospitalPlanner</b></a> - the perfect app both for <b>doctors</b> and <b>patients</b>.
+    <a href="http://localhost:7010/landingPage" class="text-main-header"><b>HospitalPlanner</b></a> - the perfect app
+    both for <b>doctors</b> and <b>patients</b>.
 </div>
+
+<div class="container-view-schedule"></div>
+
+<div class="button-return-main"></div>
+<script type="text/javascript" th:src="@{/scripts/doctorsPage.js}"></script>
 
 </body>
 </html>

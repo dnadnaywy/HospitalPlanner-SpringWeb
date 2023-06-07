@@ -1,8 +1,12 @@
 package com.example.hospitalplaneer.PageController;
 
 import ClassesDAO.DoctorsDAO;
+import basicClasses.DoctorUser;
 import basicClasses.DoctorsSchedule;
+import basicClasses.Table;
 import com.example.hospitalplaneer.Services.DoctorPageService;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,21 +14,28 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import java.io.File;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-@RequestMapping("/doctors")
+import static ClassesDAO.DoctorsDAO.returnAllSchedules;
+
 @Controller
+@RequestMapping("/doctors")
 public class DoctorPageController implements WebMvcConfigurer {
 
-    private List<DoctorsSchedule> schedules = new ArrayList<>();
+    public static List<DoctorsSchedule> schedules = new ArrayList<>();
+
+    public static List<DoctorUser> doctors = new ArrayList<>();
 
     @Autowired
     private DoctorPageService updateScheduleService;
 
     public DoctorPageController() throws SQLException {
-//        schedules = DoctorsDAO.returnAllSchedules();
+        schedules = DoctorsDAO.returnAllSchedules();
+        doctors = DoctorsDAO.returnAllDoctors();
     }
 
     @Override
@@ -38,21 +49,23 @@ public class DoctorPageController implements WebMvcConfigurer {
         return "doctorsUpdateSchedule";
     }
 
-
     @PostMapping("/schedule")
-    public String greetingSubmit(@ModelAttribute DoctorsSchedule personForm, Model model) throws SQLException {
+    public String greetingSubmit(@ModelAttribute DoctorsSchedule scheduleForm, Model model) throws SQLException {
         String errorMessage = new String();
-        model.addAttribute("personForm", personForm);
-        System.out.println(personForm.toString());
+        model.addAttribute("personForm", scheduleForm);
+        System.out.println(scheduleForm.toString());
 
-        boolean correctInput = updateScheduleService.checkInputFormUpdate(personForm);
+        boolean correctInput = updateScheduleService.checkInputFormUpdate(scheduleForm);
 
         if (!correctInput) {
             //TODO: maybe display sth like you messed up, try again
             errorMessage = DoctorPageService.getErrorMessage();
-            personForm.setErrorMessage(errorMessage);
+            scheduleForm.setErrorMessage(errorMessage);
             return "doctorsUpdateSchedule";
         }
+        //TODO: adauga in baza de date
+        DoctorsDAO.insertSchedule(scheduleForm);
+
         return "results";
     }
 
@@ -60,15 +73,6 @@ public class DoctorPageController implements WebMvcConfigurer {
     @GetMapping(value = "/doctorsPage")
     public String doctorsPage() {
         return "doctorsPage";
-    }
-
-    @GetMapping("/{id}") //TODO: see why this does not work
-    public DoctorsSchedule getSchedule(@PathVariable("id") int id) {
-        if (schedules.isEmpty()) {
-            System.out.println("Sorry, not good!");
-        }
-        return schedules.stream()
-                .filter(p -> p.getIdDoctor() == id).findFirst().orElse(null);
     }
 
 }

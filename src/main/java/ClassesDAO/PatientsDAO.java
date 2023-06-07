@@ -1,5 +1,6 @@
 package ClassesDAO;
 
+import basicClasses.DoctorsSchedule;
 import databaseStuff.Database;
 
 import java.sql.*;
@@ -16,6 +17,20 @@ public class PatientsDAO {
         }
     }
 
+    public static void insertAppointment(DoctorsSchedule schedule) throws SQLException {
+        Connection con = Database.getConnection();
+        try (PreparedStatement pstmt = con.prepareStatement(
+                "insert into patients_appointments (id_doctor, id_patient, hour, minute) values (?, ?, ?, ?)")) {
+            pstmt.setInt(1, schedule.getIdDoctor());
+            pstmt.setInt(2, schedule.getIdPatient());
+            pstmt.setInt(3, schedule.getHour());
+            pstmt.setInt(4, schedule.getMinute());
+            pstmt.executeUpdate();
+            Database.getConnection().commit();
+            pstmt.close();
+        }
+    }
+
     public Integer findByName(String name) throws SQLException {
         Connection con = Database.getConnection();
         try (Statement stmt = con.createStatement();
@@ -26,12 +41,12 @@ public class PatientsDAO {
         }
     }
 
-    public String findById(int id) throws SQLException {
+    public static String findById(int id) throws SQLException {
         Connection con = Database.getConnection();
         try (Statement stmt = con.createStatement();
              ResultSet rs = stmt.executeQuery(
                      "select name from patients where id='" + id + "'")) {
-            stmt.close();
+            stmt.close();//TODO: close result set??
             return rs.next() ? rs.getString(1) : null;
         }
     }

@@ -1,18 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;800&display=swap');
 
-/**stilurile sunt aplicate implicit și se folosesc pentru a asigura un aspect consistent pentru site */
-html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, a, img, center, ol,
-ul, li, article, footer, header, menu, nav, section {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    font-weight: normal;
-    vertical-align: baseline;
-}
-
 body {
     line-height: 1;
 }
@@ -28,50 +16,15 @@ html {
     box-sizing: border-box;
 }
 
-*,
-*:before,
-*:after {
-    box-sizing: inherit;
-}
-
 /** seteaza culoarea de fundal a paginii la o nuanta de gri deschis (#f3f6fa) */
 body {
-    background: #f3f6fa;
-    color: #036bfc;
     font-family: 'Urbanist', sans-serif;
-    font-size: 15pt;
-    font-weight: 300;
-    letter-spacing: 0.025em;
-    line-height: 1.75em;
 }
 
-/**  "h1" (titlu nivel 1), "h2" (titlu nivel 2), "h3" (titlu nivel 3)*/
-h1, h2, h3, h4, h5, h6 {
-    color: inherit;
-    /* inherit - adica va folosi culoarea mostenita de la elementul parinte*/
-    font-weight: 300;
-    line-height: 1.75em;
-    margin-bottom: 1em;
-    text-transform: uppercase;
-}
-
-/** elementele "a" (link-uri) din interiorul elementelor de tip "h1", "h2", "h3", "h4", "h5" si "h6*/
-h1 a, h2 a, h3 a, h4 a,
-h5 a,
-h6 a {
-    color: inherit;
-    text-decoration: none;
-    border: 0;
-}
 
 h1 {
     font-size: 1.5em;
     letter-spacing: 0.1em;
-}
-
-h3 {
-    font-size: 1.15em;
-    letter-spacing: 0.025em;
 }
 
 /* Row */
@@ -113,9 +66,6 @@ h3 {
 
 /* List */
 
-
-
-
 #header nav ul li.current > a {
     font-weight: 900;
     /* pagina curenta apare ingrosata in meniu cand suntem in ea */
@@ -147,10 +97,6 @@ h3 {
 }
 
 /*to be similar to other pages*/
-
-:root {
-    --main-blue: #095ACF;
-}
 
 .main-header {
     background-color: #1CABE8;
@@ -193,8 +139,6 @@ h3 {
     font-size: 20px;
     font-weight: 600;
     transition: all 0.5s ease-in-out;
-    width: 150px;
-    height: 100px;
 
     border: 2px solid #095c7b;
     border-radius: 24px;

@@ -1,0 +1,78 @@
+.container-view-schedule {
+    position: absolute;
+    top: 200px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: center;
+}
+
+.table-box {
+    width: 300px;
+    height: 270px;
+    background-color: #f1f2f6;
+    font-size: 22px;
+    text-align: center;
+
+    margin: 10px;
+
+    word-wrap: break-word;
+
+    border-radius: 10px;
+    border: 2px solid #a9a9a9;
+    box-shadow: 1px -1px 10px 1px rgba(150,150,150,0.75);
+    -webkit-box-shadow: 1px -1px 10px 1px rgba(150,150,150,0.75);
+    -moz-box-shadow: 1px -1px 10px 1px rgba(150,150,150,0.75);
+}
+
+.table-box-smaller-text {
+    font-size: 16px;
+    margin: 5px;
+}
+
+.fa-user {
+    margin-top: 14px;
+    font-size: 36px;
+    color: rgba(65, 65, 65, 0.95);
+}
+
+.doctor-name {
+    color: #095ACF;
+}
+
+.button-return-main {
+    position: absolute;
+    top: 80%;
+    left: 70%;
+}
+
+#return-to-main-content-button {
+    background-color: #095ACF;
+    opacity: 0.9;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    transition: all 0.5s ease-in-out;
+
+    border: 2px solid #095c7b;
+    border-radius: 24px;
+    padding: 15px;
+    padding-left: 100px;
+    padding-right: 100px;
+
+    -webkit-text-stroke-width: 0.8px;
+    -webkit-text-stroke-color: black;
+
+    box-shadow: 1px -1px 10px 1px rgba(150,150,150,0.75);
+    -webkit-box-shadow: 1px -1px 10px 1px rgba(150,150,150,0.75);
+    -moz-box-shadow: 1px -1px 10px 1px rgba(150,150,150,0.75);
+}
+
+#return-to-main-content-button:hover {
+    cursor: pointer;
+    background-color: #e7e7e7;
+    opacity: 1;
+    color: #095ACF;
+    transition: all 0.5s ease-in-out;
+}

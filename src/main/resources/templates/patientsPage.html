@@ -3,11 +3,18 @@
 <head>
     <title>Patients' page</title>
     <link rel="website icon" href="../static/images/hospitalIcon.png"/>
+    <link rel="website icon" th:href="@{/images/hospitalIcon.png}"/>
     <!-- Asta e logoul din partea de sus sus de tot, ala cu pastila -->
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="stylesheet" href="../static/styles/patientsPage.css"/>
-    <link th:href="@{/styles/patientsPage.css}" rel="stylesheet" />
+    <link rel="stylesheet" href="../static/styles/viewDoctorsListFromPatients.css"/>
+    <link rel="stylesheet" href="../static/styles/patientsPageDoctorList.css"/>
+    <link th:href="@{/styles/patientsPage.css}" rel="stylesheet"/>
+    <link th:href="@{/styles/patientsPageDoctorList.css}" rel="stylesheet"/>
+    <link th:href="@{/styles/viewDoctorsListFromPatients.css}" rel="stylesheet"/>
+    <script type="text/javascript" th:src="@{/scripts/patientsPage.js}"></script>
+    <script src="https://kit.fontawesome.com/0668abd750.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -16,68 +23,33 @@
 <div id="header">
     <nav id="nav">
         <ul class="header-doctors">
-            <li class="current"><a class="buttons-header-doctors">View doctor's availability</a>
-                <select name="doctors" id="doctors">
-                    <option>Leuciuc Ana</option>
-                    <option>Negrutu Ana Andra</option>
-                    <option>Plugariu Ana Andra</option>
-                    <option>Iovu Ana</option>
-                    <option>Cimpoesu Ioana</option>
-                    <option>Bodnar Ioana</option>
-                    <option>Scurtu Codrina</option>
-                    <option>Riza Codrina Sabina</option>
-                    <option>Craciunas Ioana Daria</option>
-                    <option>Arteni Monica</option>
-                    <option>Ionesei Stefana Ecaterina</option>
-                    <option>Ciofu Stefana Ecaterina</option>
-                    <option>Mataca Sanziana Daniela</option>
-                    <option>Coca Sanziana Daniela</option>
-                    <option>Iacobuta Sanziana</option>
-                    <option>Curca Sanziana</option>
-                    <option>Bejan Sanziana</option>
-                    <option>Chmilevski Sanziana</option>
-                    <option>Bulai Adina</option>
-                    <option>Dogaru Paula Petruta</option>
-                </select></li>
-
+            <li>
+                <a class="buttons-header-doctors" th:onclick="displayAllDoctors()">Doctors list</a>
+            </li>
 
             <li>
-                <a class="buttons-header-doctors">Doctors list</a>
-                <select name="doctors" id="doctors_list">
-                    <option>Leuciuc Ana</option>
-                    <option>Negrutu Ana Andra</option>
-                    <option>Plugariu Ana Andra</option>
-                    <option>Iovu Ana</option>
-                    <option>Cimpoesu Ioana</option>
-                    <option>Bodnar Ioana</option>
-                    <option>Scurtu Codrina</option>
-                    <option>Riza Codrina Sabina</option>
-                    <option>Craciunas Ioana Daria</option>
-                    <option>Arteni Monica</option>
-                    <option>Ionesei Stefana Ecaterina</option>
-                    <option>Ciofu Stefana Ecaterina</option>
-                    <option>Mataca Sanziana Daniela</option>
-                    <option>Coca Sanziana Daniela</option>
-                    <option>Iacobuta Sanziana</option>
-                    <option>Curca Sanziana</option>
-                    <option>Bejan Sanziana</option>
-                    <option>Chmilevski Sanziana</option>
-                    <option>Bulai Adina</option>
-                    <option>Dogaru Paula Petruta</option>
-                </select></li>
-
-            <li>
-                <a href="#" class="buttons-header-doctors">Make an appointment</a>
+                <a href="#" th:onclick="showAlert()" class="buttons-header-doctors">Favourites</a>
             </li>
         </ul>
     </nav>
 </div>
 
+<!--<div class="header-doctors-1">-->
+<!--    <button type="button" th:onclick="showAlert()" class="buttons-header-doctors">Doctors List</button>-->
+<!--    <button type="button" th:onclick="showAlert()" class="buttons-header-doctors">Favourites</button>-->
+<!--</div>-->
+
 <div class="link-to-landing-page main-header text-main-header">
-    <a href="http://localhost:7010/landingPage" class="text-main-header"><b>HospitalPlanner</b></a> - the perfect app both for <b>doctors</b> and <b>patients</b>.
+    <a href="http://localhost:7010/landingPage" class="text-main-header"><b>HospitalPlanner</b></a> - the perfect app
+    both for <b>doctors</b> and <b>patients</b>.
 </div>
 
 <div class="fullscreen-image"></div>
+
+<div class="container-doctor-list">
+</div>
+
+<div class="button-return-main"></div>
 
 </body>
 

@@ -35,8 +35,13 @@ public class HospitalPlaneerApplication {
 //            patients.deleteMichaelJackson();
 //            Database.getConnection().commit();
 
-            System.out.println(DoctorsDAO.returnAllSchedules().toString());
+//            DoctorsDAO.returnAllSchedulesByDoctorId(1);
 
+            DoctorsDAO.returnAllSchedulesByDoctorId(1);
+            DoctorsDAO.returnAllDoctors();
+            System.out.println(DoctorsDAO.findByName("Macovei Rares"));
+
+            System.out.println(DoctorsDAO.findByNameAndPassword("Macovei Rares", "admin1234"));
             SpringApplication.run(HospitalPlaneerApplication.class, args);
         } catch (SQLException e) {
             System.err.println(e);
