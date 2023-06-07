@@ -4,14 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin page</title>
+    <title>Signup Doctors</title>
     <link rel="website icon" href="@{/images/hospitalIcon.png}"/>
     <!-- Asta e logoul din partea de sus sus de tot, ala cu spitalul -->
+    <script src="https://kit.fontawesome.com/0668abd750.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../static/styles/forms.css">
+    <link th:href="@{/styles/doctorsPage.css}" rel="stylesheet" />
+    <script type="text/javascript" th:src="@{/scripts/doctorsPage.js}"></script>
 </head>
 
 <body>
-<h1>Sign-Up Doctors</h1>
-<form action="/signupDoctors" method="POST">
+
+<div class="divide-content"></div>
+<div class="link-to-landing-page main-header text-main-header">
+    <a href="http://localhost:7010/landingPage" class="text-main-header"><b>HospitalPlanner</b></a> - the perfect app both for <b>doctors</b> and <b>patients</b>.
+</div>
+
+<div style="margin-top: 100px;"  class="login-container">
+
+<img src="../images/doctor-woman.jpg">
+<form class="login-form" action="/signupDoctors" method="POST">
     <label for="firstNAme">First name:</label><br>
     <input type="text" name="firstName" placeholder="George" required><br>
     <label for="lastName">Last name:</label><br>
@@ -40,6 +53,7 @@
     <input type="submit" value="Submit" required>
 
 </form>
+</div>
 </body>
 
 </html>
