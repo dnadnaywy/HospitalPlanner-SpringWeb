@@ -5,7 +5,6 @@ public class DoctorUser {
 
     private String firstName;
     private String lastName;
-    private Integer age;
     private String email;
     private String phone;
     private String password;
@@ -35,17 +34,9 @@ public class DoctorUser {
     public void setSpecialiation(String specialiation) {
         this.specialiation = specialiation;
     }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
     
     public void setMedicalGrade(String medicalGrade) {
         this.medicalGrade = medicalGrade;
-    }
-
-    public Integer getAge() {
-        return age;
     }
 
     public String getFirstName() {
