@@ -17,42 +17,52 @@ public class AdminDAO {
         cstmt.registerOutParameter(1, Types.VARCHAR);
         cstmt.executeUpdate();
         String tables = cstmt.getString(1);
-        convertStringToJSON(tables);
+        convertStringToJSON(tables, "tablesData.json");
         //convertJSONToList();
+        cstmt.close();
         return tables;
     }
 
     public static void findTableByName(String tableName) throws SQLException {
         Connection con = Database.getConnection();
+        String jsonString = new String();
         try (Statement stmt = con.createStatement();
              ResultSet resultSet = stmt.executeQuery(
                      "select * from " + tableName)) {
 
-            ResultSetMetaData metaData = resultSet.getMetaData();
+            //formatting the jsonString in order to prepare for putting it in a json file later
+            jsonString += "[";
 
+            ResultSetMetaData metaData = resultSet.getMetaData();
             // Get the number of columns in the result set
             int columnCount = metaData.getColumnCount();
-            System.out.println("Number of columns: " + columnCount);
 
-            for (int i = 1; i <= columnCount; i++) {
-                String columnName = metaData.getColumnName(i);
-                String columnType = metaData.getColumnTypeName(i);
+            while (resultSet.next()) {
+                jsonString += "{";
+                for (int i = 1; i <= columnCount; i++) {
+                    String columnName = metaData.getColumnName(i);
+                    String columnType = metaData.getColumnTypeName(i);
 
-                System.out.println("Column Name: " + columnName);
-                System.out.println("Column Type: " + columnType);
-                System.out.println();
+                    jsonString += "\"" + columnName + "\":\"" + resultSet.getObject(columnName) + "\",";
+
+                    System.out.println("Column Name: " + columnName);
+                    System.out.println("Column Type: " + columnType);
+                    System.out.println(resultSet.getObject(columnName));
+                    System.out.println();
+                }
+                jsonString = jsonString.substring(0, jsonString.length() - 1);
+                jsonString += "},";
             }
+            jsonString = jsonString.substring(0, jsonString.length() - 1);
+            jsonString += "]";
+            convertStringToJSON(jsonString, "specifiedTable.json");
 
-            while (resultSet.next()){
-                System.out.println(resultSet.getString(2));
-            }
             resultSet.close();
             stmt.close();
-            con.close();
         }
     }
 
-    public void convertStringToJSON(String jsonString) {
+    public static void convertStringToJSON(String jsonString, String jsonFile) {
 
         try {
             // Create an ObjectMapper object
@@ -62,7 +72,7 @@ public class AdminDAO {
             Object jsonObject = objectMapper.readValue(jsonString, Object.class);
 
             // Write the JSON object to a file
-            objectMapper.writeValue(new File("src/main/resources/jsonFiles/tablesData.json"), jsonObject);
+            objectMapper.writeValue(new File("src/main/resources/jsonFiles/" + jsonFile), jsonObject);
 
             System.out.println("JSON file created successfully!");
         } catch (Exception e) {

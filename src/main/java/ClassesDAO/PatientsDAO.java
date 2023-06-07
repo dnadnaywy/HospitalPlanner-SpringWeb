@@ -12,6 +12,7 @@ public class PatientsDAO {
             pstmt.setString(1, name);
             pstmt.setBoolean(2, medicalInsurance);
             pstmt.executeUpdate();
+            pstmt.close();
         }
     }
 
@@ -20,6 +21,7 @@ public class PatientsDAO {
         try (Statement stmt = con.createStatement();
              ResultSet rs = stmt.executeQuery(
                      "select id from patients where name='" + name + "'")) {
+            stmt.close();
             return rs.next() ? rs.getInt(1) : null;
         }
     }
@@ -29,6 +31,7 @@ public class PatientsDAO {
         try (Statement stmt = con.createStatement();
              ResultSet rs = stmt.executeQuery(
                      "select name from patients where id='" + id + "'")) {
+            stmt.close();
             return rs.next() ? rs.getString(1) : null;
         }
     }
@@ -38,6 +41,6 @@ public class PatientsDAO {
         Statement stmt = con.createStatement();
         String sql = "delete from patients where name = 'Michael Jackson'";
         int nbRowsAffected = stmt.executeUpdate(sql);
-
+        stmt.close();
     }
 }

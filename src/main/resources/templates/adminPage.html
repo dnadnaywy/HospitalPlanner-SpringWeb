@@ -21,12 +21,12 @@
 <div class="divide-content"></div>
 
 <div class="header-doctors-1">
-  <button type="button" th:onclick="showAlert()" class="buttons-header-doctors flex-grow-property-value-2">Add user</button>
+  <button type="button" th:onclick="redirectToAdminAddUser()" class="buttons-header-doctors flex-grow-property-value-2">Add user</button>
   <button class="buttons-header-doctors flex-grow-property-value-2">Delete user</button>
 </div>
 
 <div class="header-doctors-2">
-  <button class="buttons-header-doctors flex-grow-property-value-2">View the data from a specific<br>table from the DB</button>
+  <button type="button" th:onclick="displayDataFromTable()" class="buttons-header-doctors flex-grow-property-value-2">View the data from a specific<br>table from the DB</button>
   <button type="button" th:onclick="logJSONData()" class="buttons-header-doctors flex-grow-property-value-2" id="demo">Check metadata about tables<br>from the DB</button>
 </div>
 
@@ -38,9 +38,8 @@
 </div>
 <div class="button-return-main"></div>
 
-<div class="add-user">
-
-</div>
+<div class="add-user"></div>
+<div class="tables-data-by-name"></div>
 
 </body>
 </html>

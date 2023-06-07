@@ -1,0 +1,26 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login page</title>
+  <link rel="website icon" href="@{/images/hospitalIcon.png}"/>
+  <!-- Asta e logoul din partea de sus sus de tot, ala cu spitalul -->
+</head>
+
+<body>
+<h1>Login doctors:</h1>
+<form action="/loginD">
+  <label for="firstName">First name:</label><br>
+  <input type="text" name="firstName" placeholder="George" required><br>
+  <label for="lastName">Last name:</label><br>
+  <input type="text" name="lastName" placeholder="Ionescu" required><br>
+  <label for="password">Enter password:</label><br>
+  <input type="password" name="password" pattern="^(?=.*[0-9])(?=.*[a-zA-Z]).{8,}$" required><br>
+  <input type="submit" value="Submit" required>
+
+</form>
+</body>
+
+</html>

@@ -19,9 +19,14 @@ public class HospitalPlaneerApplication {
     public static void main(String[] args) throws SQLException {
         try {
             Database.createConnection();
+//            System.out.println(Database.getConnection());
+//            System.out.println(Database.getConnection().isClosed());
 //            var doctors = new DoctorsDAO();
 //            System.out.println("Doctors with ORL specialization:");
 //            System.out.println(doctors.returnDocsSpec("ORL"));
+
+//            System.out.println(DoctorsDAO.findById((Integer)21));
+//            doctors.create("new name here");
 //
 //            System.out.println("Doctors with a random specialization:");
 //            System.out.println(doctors.returnDocsSpec("random"));
@@ -30,14 +35,12 @@ public class HospitalPlaneerApplication {
 //            patients.deleteMichaelJackson();
 //            Database.getConnection().commit();
 
-            findTableByName("doctors");
+            System.out.println(DoctorsDAO.returnAllSchedules().toString());
 
             SpringApplication.run(HospitalPlaneerApplication.class, args);
-            Database.closeConnection();
         } catch (SQLException e) {
             System.err.println(e);
             Database.rollback();
         }
     }
-
 }

@@ -5,11 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doctors' page</title>
-    <link rel="website icon" href="../static/images/hospitalIcon.png"/>
+    <link rel="website icon" th:href="@{/images/hospitalIcon.png}"/>
     <!-- Asta e logoul din partea de sus sus de tot, ala cu pastila -->
+
+    <script src="https://kit.fontawesome.com/0668abd750.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="../static/styles/doctorsPage.css">
     <link th:href="@{/styles/doctorsPage.css}" rel="stylesheet" />
+    <script type="text/javascript" th:src="@{/scripts/doctorsPage.js}"></script>
 </head>
 
 <body>
@@ -17,8 +20,8 @@
 <div class="divide-content"></div>
 
 <div class="header-doctors">
-    <button class="buttons-header-doctors">View Schedule</button>
-    <button class="buttons-header-doctors">Update Schedule</button>
+    <button type="button" th:onclick="redirectToDoctorViewSchedule()" class="buttons-header-doctors">View Schedule</button>
+    <button type="button" th:onclick="showAlert()" class="buttons-header-doctors">Update Schedule</button>
 </div>
 
 <div class="link-to-landing-page main-header text-main-header">

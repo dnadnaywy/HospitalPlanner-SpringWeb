@@ -3,7 +3,8 @@ package databaseStuff;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-
+//TODO: jpa entity + connections with tables
+//TODO: hikari connection pool
 public class Database {
     private static final String URL =
             "jdbc:oracle:thin:@localhost:1521:xe";
@@ -24,7 +25,11 @@ public class Database {
     }
 
     public static void closeConnection() throws SQLException {
-        if (connection != null) connection.close();
+        System.out.println("nuup");
+        if (connection != null) {
+            connection.close();
+            connection = null;
+        }
     }
 
     public static void rollback() {
