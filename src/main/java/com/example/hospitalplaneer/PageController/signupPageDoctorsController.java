@@ -63,13 +63,14 @@ public class signupPageDoctorsController {
 
             // cum inseram? trb adaugata parola si maybe verificam mai sus in fct de parola?
 
-            String sql = "INSERT INTO doctors (name, specialization, phone_number, email, password) VALUES (?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO doctors (name, specialization, phone_number, email, password, medical_grade) VALUES (?, ?, ?, ?, ?, ?)";
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setString(1, doctor.getLastName() + " " + doctor.getFirstName());
             stmt.setString(2, doctor.getSpecialiation());
             stmt.setString(3, doctor.getPhone());
             stmt.setString(4, doctor.getEmail());
             stmt.setString(5, doctor.getPassword());
+            stmt.setString(6, doctor.getMedicalGrade());
 
             stmt.executeUpdate();
             Database.getConnection().commit();
