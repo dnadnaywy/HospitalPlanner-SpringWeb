@@ -5,11 +5,11 @@ public class DoctorUser {
 
     private String firstName;
     private String lastName;
-    private Integer age;
     private String email;
     private String phone;
     private String password;
     private String specialiation;
+    private String medicalGrade;
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
@@ -34,13 +34,9 @@ public class DoctorUser {
     public void setSpecialiation(String specialiation) {
         this.specialiation = specialiation;
     }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
-    public Integer getAge() {
-        return age;
+    
+    public void setMedicalGrade(String medicalGrade) {
+        this.medicalGrade = medicalGrade;
     }
 
     public String getFirstName() {
@@ -66,6 +62,10 @@ public class DoctorUser {
     public String getSpecialiation() {
         return specialiation;
     }
+    
+    public String getMedicalGrade() {
+        return medicalGrade;
+    }
 
     @Override
     public String toString() {
@@ -76,6 +76,7 @@ public class DoctorUser {
                 ", phone='" + phone + '\'' +
                 ", password='" + password + '\'' +
                 ", specialiation='" + specialiation + '\'' +
+                ", medicalGrade='" + medicalGrade + '\'' +
                 '}';
     }
 }

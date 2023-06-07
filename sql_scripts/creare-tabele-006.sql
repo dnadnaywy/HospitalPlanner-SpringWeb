@@ -18,11 +18,12 @@ CREATE SEQUENCE doctors_seq START WITH 1;
 CREATE TABLE doctors (
     id INT PRIMARY KEY,
     name VARCHAR2(255) UNIQUE NOT NULL,
-    age INT, 
     specialization VARCHAR2(255),
     phone_number VARCHAR2(20) UNIQUE,
     email VARCHAR2(100) UNIQUE,
-    password VARCHAR(100)
+    phone VARCHAR(20) UNIQUE,
+    password VARCHAR(100),
+    medical_grade VARCHAR(20)
 );
 /
 CREATE OR REPLACE TRIGGER doctors_trigger
