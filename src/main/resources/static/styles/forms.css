@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;800&display=swap');
+
+body {
+    font-family: 'Urbanist', sans-serif;
+    background-position: right 50px;
+    background-size: 50% auto, 50% auto;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.main-header {
+    background-color: #1CABE8;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 100%;
+    padding-top: 35px;
+    margin-right: 20px;
+}
+
+.text-main-header {
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+    text-decoration: none;
+    -webkit-text-stroke-width: 0.8px;
+    -webkit-text-stroke-color: #095c7b;
+}
+
+.divide-content {
+    background-color: #095c7b;
+    position: absolute;
+    top: 95px;
+    left: 0;
+    height: 5px;
+    width: 100%;
+}
+
+.link-to-landing-page {
+    position: absolute;
+    top: 0px;
+}
+
+.login-container {
+    display: flex;
+    align-items: center;
+    width: 400px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.login-container img {
+    width: 200px;
+    margin-right: 5px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form input {
+
+    border: none;
+    border-bottom: 1px solid #095ACF ;
+   
+}
