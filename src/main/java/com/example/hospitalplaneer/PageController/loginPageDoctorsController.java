@@ -36,10 +36,11 @@ public class loginPageDoctorsController {
             Connection conn = Database.getConnection();
 
             //cu ce sa verificam daca exista?
-            String sql = "SELECT COUNT(*) FROM doctors WHERE name = ?";
+            String sql = "SELECT COUNT(*) FROM doctors WHERE name = ? AND password = ?";
             String name = doctor.getLastName() + " " + doctor.getFirstName();
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setString(1, name);
+            stmt.setString(2, doctor.getPassword());
 
             // Execute the query
             ResultSet rs = stmt.executeQuery();
