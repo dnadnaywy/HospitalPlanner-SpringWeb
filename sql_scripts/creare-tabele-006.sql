@@ -18,7 +18,6 @@ CREATE SEQUENCE doctors_seq START WITH 1;
 CREATE TABLE doctors (
     id INT PRIMARY KEY,
     name VARCHAR2(255) UNIQUE NOT NULL,
-    age INT, 
     specialization VARCHAR2(255),
     phone_number VARCHAR2(20) UNIQUE,
     email VARCHAR2(100) UNIQUE,
